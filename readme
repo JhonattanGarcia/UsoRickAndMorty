@@ -1,0 +1,31 @@
+# Proyecto Rick and Morty API
+
+![Rick and Morty](https://rickandmortyapi.com/icons/icon-512x512.png)
+
+## Descripción
+
+Este proyecto es una aplicación web que utiliza la API de **Rick and Morty** para mostrar información detallada sobre los personajes de la serie. Permite a los usuarios buscar, filtrar y agregar personajes a favoritos, además de agregar comentarios a cada personaje.
+
+## Funcionalidades
+
+- Listado de personajes con opción de ordenarlos (A-Z / Z-A).
+- Filtros de personajes por **nombre**, **tipo** y **origen**.
+- Visualización de detalles del personaje al hacer clic en la tarjeta correspondiente.
+- Modal con transición suave que muestra información detallada del personaje.
+- Sistema de favoritos para guardar personajes destacados.
+- Sección de comentarios para cada personaje.
+- Diseño responsive utilizando **CSS Flexbox** y **CSS Grid**.
+- Aplicación desarrollada con **PHP**, **JavaScript** (jQuery), y uso de **API Rick and Morty**.
+
+## Requisitos
+
+### Backend
+- **API**: Utilización de **Express** y **GraphQL** para buscar personajes de la API de Rick and Morty.
+- **PHP**: Implementación de filtros y comentarios mediante lógica en el backend.
+
+### Frontend
+- **HTML/CSS**: Uso de **CSS Grid** y **Flexbox** para la disposición de los elementos.
+- **JavaScript/jQuery**: Control de la UI, modales, filtros y favoritos en un archivo separado `CardControl.js`.
+
+### Estructura de Carpetas
+
