@@ -1,0 +1,174 @@
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #f7f7f7;
+}
+
+/* Banner y filtros */
+.banner {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Estilos para la sección de filtros */
+.filters {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Evitamos que los filtros se envuelvan */
+    justify-content: space-between; /* Distribuir uniformemente */
+    align-items: flex-start;
+    gap: 15px; /* Espaciado entre los elementos */
+    padding: 10px;
+}
+
+.filters label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filters select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    position: relative;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        background-color: #2c3e50;
+        padding: 10px;
+        flex-direction: column;
+        border-radius: 5px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Lista de personajes */
+.characters-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.character-item:hover {
+    transform: translateY(-5px);
+}
+
+.character-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.favorite {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.favorite-active {
+    color: gold;
+}
+
+.favorite:hover {
+    color: gold;
+}
+
+/* Detalles del personaje (expandibles) */
+.character-details {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.character-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.character-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
