@@ -1,0 +1,39 @@
+CREATE TABLE characters (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    status VARCHAR(50), -- Ejemplo: 'Alive', 'Dead', 'unknown'
+    species VARCHAR(100),
+    type VARCHAR(100), -- Ejemplo: 'Human', 'Alien'
+    gender VARCHAR(50), -- Ejemplo: 'Male', 'Female', 'Genderless', 'unknown'
+    origin_location_id INT, -- Relación con la tabla de ubicaciones
+    current_location_id INT, -- Relación con la tabla de ubicaciones
+    image VARCHAR(255), -- URL de la imagen del personaje
+    url VARCHAR(255), -- URL del personaje en la API de Rick & Morty
+    created_at TIMESTAMP -- Fecha en que fue creado el registro en la API
+);
+
+CREATE TABLE locations (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(100), -- Ejemplo: 'Planet', 'Space station'
+    dimension VARCHAR(255), -- Ejemplo: 'Dimension C-137'
+    url VARCHAR(255), -- URL de la ubicación en la API de Rick & Morty
+    created_at TIMESTAMP -- Fecha en que fue creada la ubicación en la API
+);
+
+CREATE TABLE episodes (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    air_date VARCHAR(100), -- Fecha en que se emitió el episodio
+    episode_code VARCHAR(50), -- Código del episodio, ejemplo: 'S01E01'
+    url VARCHAR(255), -- URL del episodio en la API de Rick & Morty
+    created_at TIMESTAMP -- Fecha en que fue creado el episodio en la API
+);
+
+CREATE TABLE characters_episodes (
+    character_id INT,
+    episode_id INT,
+    PRIMARY KEY (character_id, episode_id),
+    FOREIGN KEY (character_id) REFERENCES characters(id),
+    FOREIGN KEY (episode_id) REFERENCES episodes(id)
+);
